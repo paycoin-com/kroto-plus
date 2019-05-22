@@ -38,6 +38,7 @@ fun main(args: Array<String>) {
             GrpcCoroutinesGenerator,
             ProtoBuildersGenerator,
             ExtendableMessagesGenerator,
+            MPProtobufMessageGenerator,
             MockServicesGenerator,
             InsertionsGenerator,
             GeneratorScriptsGenerator

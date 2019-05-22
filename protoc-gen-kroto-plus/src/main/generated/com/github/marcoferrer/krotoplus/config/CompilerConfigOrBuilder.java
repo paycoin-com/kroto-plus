@@ -278,7 +278,7 @@ public interface CompilerConfigOrBuilder extends
    *
    * <code>repeated .krotoplus.compiler.GrpcCoroutinesGenOptions grpc_coroutines = 26;</code>
    */
-  java.util.List<com.github.marcoferrer.krotoplus.config.GrpcCoroutinesGenOptions> 
+  java.util.List<com.github.marcoferrer.krotoplus.config.GrpcCoroutinesGenOptions>
       getGrpcCoroutinesList();
   /**
    * <pre>
@@ -303,7 +303,7 @@ public interface CompilerConfigOrBuilder extends
    *
    * <code>repeated .krotoplus.compiler.GrpcCoroutinesGenOptions grpc_coroutines = 26;</code>
    */
-  java.util.List<? extends com.github.marcoferrer.krotoplus.config.GrpcCoroutinesGenOptionsOrBuilder> 
+  java.util.List<? extends com.github.marcoferrer.krotoplus.config.GrpcCoroutinesGenOptionsOrBuilder>
       getGrpcCoroutinesOrBuilderList();
   /**
    * <pre>
@@ -313,5 +313,49 @@ public interface CompilerConfigOrBuilder extends
    * <code>repeated .krotoplus.compiler.GrpcCoroutinesGenOptions grpc_coroutines = 26;</code>
    */
   com.github.marcoferrer.krotoplus.config.GrpcCoroutinesGenOptionsOrBuilder getGrpcCoroutinesOrBuilder(
+      int index);
+
+  /**
+   * <pre>
+   * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+   * </pre>
+   *
+   * <code>repeated .krotoplus.compiler.MPProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+   */
+  java.util.List<com.github.marcoferrer.krotoplus.config.MPProtobufMessagesGenOptions>
+      getMpProtobufMessagesList();
+  /**
+   * <pre>
+   * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+   * </pre>
+   *
+   * <code>repeated .krotoplus.compiler.MPProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+   */
+  com.github.marcoferrer.krotoplus.config.MPProtobufMessagesGenOptions getMpProtobufMessages(int index);
+  /**
+   * <pre>
+   * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+   * </pre>
+   *
+   * <code>repeated .krotoplus.compiler.MPProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+   */
+  int getMpProtobufMessagesCount();
+  /**
+   * <pre>
+   * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+   * </pre>
+   *
+   * <code>repeated .krotoplus.compiler.MPProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+   */
+  java.util.List<? extends com.github.marcoferrer.krotoplus.config.MPProtobufMessagesGenOptionsOrBuilder>
+      getMpProtobufMessagesOrBuilderList();
+  /**
+   * <pre>
+   * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+   * </pre>
+   *
+   * <code>repeated .krotoplus.compiler.MPProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+   */
+  com.github.marcoferrer.krotoplus.config.MPProtobufMessagesGenOptionsOrBuilder getMpProtobufMessagesOrBuilder(
       int index);
 }
