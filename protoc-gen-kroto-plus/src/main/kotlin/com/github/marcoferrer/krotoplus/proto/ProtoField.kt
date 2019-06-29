@@ -18,37 +18,36 @@ package com.github.marcoferrer.krotoplus.proto
 
 import com.google.protobuf.ByteString
 import com.google.protobuf.DescriptorProtos
-import com.google.protobuf.DescriptorProtos.FieldDescriptorProto.Label.*
+import com.google.protobuf.DescriptorProtos.FieldDescriptorProto.Label.LABEL_REPEATED
 import com.google.protobuf.DescriptorProtos.FieldDescriptorProto.Type.*
-import com.squareup.kotlinpoet.ClassName
 import com.squareup.kotlinpoet.ParameterizedTypeName
-import com.squareup.kotlinpoet.asClassName
-import java.lang.IllegalArgumentException
+import com.squareup.kotlinpoet.ParameterizedTypeName.Companion.parameterizedBy
+import kotlin.reflect.KClass
 
 
-fun DescriptorProtos.FieldDescriptorProto.getFieldClassName(schema: Schema): ClassName =
+fun DescriptorProtos.FieldDescriptorProto.getFieldClassName(schema: Schema): KClass<*> =
     when (type!!) {
         TYPE_INT64,
         TYPE_FIXED64,
         TYPE_SFIXED64,
         TYPE_SINT64,
-        TYPE_UINT64 -> Long::class.asClassName()
+        TYPE_UINT64 -> Long::class
         TYPE_INT32,
         TYPE_UINT32,
         TYPE_SFIXED32,
         TYPE_SINT32,
-        TYPE_FIXED32 -> Int::class.asClassName()
-        TYPE_DOUBLE -> Double::class.asClassName()
-        TYPE_FLOAT -> Float::class.asClassName()
-        TYPE_BOOL -> Boolean::class.asClassName()
-        TYPE_STRING -> String::class.asClassName()
-        TYPE_BYTES -> ByteString::class.asClassName()
+        TYPE_FIXED32 -> Int::class
+        TYPE_DOUBLE -> Double::class
+        TYPE_FLOAT -> Float::class
+        TYPE_BOOL -> Boolean::class
+        TYPE_STRING -> String::class
+        TYPE_BYTES -> ByteString::class
 
         TYPE_GROUP ->
             TODO("ClassName for field type 'GROUP' is not yet implemented")
 
-        TYPE_MESSAGE -> (schema.protoTypes[typeName] as ProtoMessage).className
-        TYPE_ENUM -> (schema.protoTypes[typeName] as ProtoEnum).className
+        TYPE_MESSAGE -> (schema.protoTypes[typeName] as ProtoMessage)::class
+        TYPE_ENUM -> (schema.protoTypes[typeName] as ProtoEnum)::class
     }
 
 //need to check the actual message in schema
@@ -69,11 +68,10 @@ fun DescriptorProtos.FieldDescriptorProto.getParamaterizeTypeName(schema: Schema
             val valueCn = message.descriptorProto.getField(1)
                 .getFieldClassName(schema)
 
-            ParameterizedTypeName.get(Map::class.asClassName(), keyCn, valueCn)
+            Map::class.parameterizedBy(keyCn, valueCn)
         }
         label == LABEL_REPEATED -> {
-
-            ParameterizedTypeName.get(List::class.asClassName(), getFieldClassName(schema))
+            List::class.parameterizedBy(getFieldClassName(schema))
         }
         else -> throw IllegalArgumentException("Only 'REPEATED' or 'MapEntry' fields can be parameterized")
     }

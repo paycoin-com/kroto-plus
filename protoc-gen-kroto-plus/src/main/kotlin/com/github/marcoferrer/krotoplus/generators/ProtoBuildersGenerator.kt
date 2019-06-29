@@ -21,7 +21,6 @@ import com.github.marcoferrer.krotoplus.config.ProtoBuildersGenOptions
 import com.github.marcoferrer.krotoplus.generators.Generator.Companion.AutoGenerationDisclaimer
 import com.github.marcoferrer.krotoplus.proto.ProtoFile
 import com.github.marcoferrer.krotoplus.proto.ProtoMessage
-import com.github.marcoferrer.krotoplus.proto.getGeneratedAnnotationSpec
 import com.github.marcoferrer.krotoplus.utils.*
 import com.google.protobuf.DescriptorProtos
 import com.google.protobuf.DescriptorProtos.FieldDescriptorProto.Label.LABEL_REPEATED

@@ -531,7 +531,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .krotoplus.compiler.GrpcCoroutinesGenOptions grpc_coroutines = 26;</code>
    */
-  public java.util.List<? extends com.github.marcoferrer.krotoplus.config.GrpcCoroutinesGenOptionsOrBuilder>
+  public java.util.List<? extends com.github.marcoferrer.krotoplus.config.GrpcCoroutinesGenOptionsOrBuilder> 
       getGrpcCoroutinesOrBuilderList() {
     return grpcCoroutines_;
   }
@@ -586,7 +586,7 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .krotoplus.compiler.MPProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
    */
-  public java.util.List<? extends com.github.marcoferrer.krotoplus.config.MPProtobufMessagesGenOptionsOrBuilder>
+  public java.util.List<? extends com.github.marcoferrer.krotoplus.config.MPProtobufMessagesGenOptionsOrBuilder> 
       getMpProtobufMessagesOrBuilderList() {
     return mpProtobufMessages_;
   }
@@ -1290,7 +1290,7 @@ private static final long serialVersionUID = 0L;
             grpcCoroutinesBuilder_ = null;
             grpcCoroutines_ = other.grpcCoroutines_;
             bitField0_ = (bitField0_ & ~0x00000040);
-            grpcCoroutinesBuilder_ =
+            grpcCoroutinesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getGrpcCoroutinesFieldBuilder() : null;
           } else {
@@ -1316,7 +1316,7 @@ private static final long serialVersionUID = 0L;
             mpProtobufMessagesBuilder_ = null;
             mpProtobufMessages_ = other.mpProtobufMessages_;
             bitField0_ = (bitField0_ & ~0x00000080);
-            mpProtobufMessagesBuilder_ =
+            mpProtobufMessagesBuilder_ = 
               com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                  getMpProtobufMessagesFieldBuilder() : null;
           } else {
@@ -3481,7 +3481,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .krotoplus.compiler.GrpcCoroutinesGenOptions grpc_coroutines = 26;</code>
      */
-    public java.util.List<? extends com.github.marcoferrer.krotoplus.config.GrpcCoroutinesGenOptionsOrBuilder>
+    public java.util.List<? extends com.github.marcoferrer.krotoplus.config.GrpcCoroutinesGenOptionsOrBuilder> 
          getGrpcCoroutinesOrBuilderList() {
       if (grpcCoroutinesBuilder_ != null) {
         return grpcCoroutinesBuilder_.getMessageOrBuilderList();
@@ -3519,12 +3519,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .krotoplus.compiler.GrpcCoroutinesGenOptions grpc_coroutines = 26;</code>
      */
-    public java.util.List<com.github.marcoferrer.krotoplus.config.GrpcCoroutinesGenOptions.Builder>
+    public java.util.List<com.github.marcoferrer.krotoplus.config.GrpcCoroutinesGenOptions.Builder> 
          getGrpcCoroutinesBuilderList() {
       return getGrpcCoroutinesFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.github.marcoferrer.krotoplus.config.GrpcCoroutinesGenOptions, com.github.marcoferrer.krotoplus.config.GrpcCoroutinesGenOptions.Builder, com.github.marcoferrer.krotoplus.config.GrpcCoroutinesGenOptionsOrBuilder>
+        com.github.marcoferrer.krotoplus.config.GrpcCoroutinesGenOptions, com.github.marcoferrer.krotoplus.config.GrpcCoroutinesGenOptions.Builder, com.github.marcoferrer.krotoplus.config.GrpcCoroutinesGenOptionsOrBuilder> 
         getGrpcCoroutinesFieldBuilder() {
       if (grpcCoroutinesBuilder_ == null) {
         grpcCoroutinesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
@@ -3793,7 +3793,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .krotoplus.compiler.MPProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
      */
-    public java.util.List<? extends com.github.marcoferrer.krotoplus.config.MPProtobufMessagesGenOptionsOrBuilder>
+    public java.util.List<? extends com.github.marcoferrer.krotoplus.config.MPProtobufMessagesGenOptionsOrBuilder> 
          getMpProtobufMessagesOrBuilderList() {
       if (mpProtobufMessagesBuilder_ != null) {
         return mpProtobufMessagesBuilder_.getMessageOrBuilderList();
@@ -3831,12 +3831,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .krotoplus.compiler.MPProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
      */
-    public java.util.List<com.github.marcoferrer.krotoplus.config.MPProtobufMessagesGenOptions.Builder>
+    public java.util.List<com.github.marcoferrer.krotoplus.config.MPProtobufMessagesGenOptions.Builder> 
          getMpProtobufMessagesBuilderList() {
       return getMpProtobufMessagesFieldBuilder().getBuilderList();
     }
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.github.marcoferrer.krotoplus.config.MPProtobufMessagesGenOptions, com.github.marcoferrer.krotoplus.config.MPProtobufMessagesGenOptions.Builder, com.github.marcoferrer.krotoplus.config.MPProtobufMessagesGenOptionsOrBuilder>
+        com.github.marcoferrer.krotoplus.config.MPProtobufMessagesGenOptions, com.github.marcoferrer.krotoplus.config.MPProtobufMessagesGenOptions.Builder, com.github.marcoferrer.krotoplus.config.MPProtobufMessagesGenOptionsOrBuilder> 
         getMpProtobufMessagesFieldBuilder() {
       if (mpProtobufMessagesBuilder_ == null) {
         mpProtobufMessagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<

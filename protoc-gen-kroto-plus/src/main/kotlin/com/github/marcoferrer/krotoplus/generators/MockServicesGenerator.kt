@@ -17,13 +17,16 @@
 package com.github.marcoferrer.krotoplus.generators
 
 import com.github.marcoferrer.krotoplus.config.MockServicesGenOptions
-import com.squareup.kotlinpoet.ParameterizedTypeName.Companion.parameterizedBy
 import com.github.marcoferrer.krotoplus.generators.Generator.Companion.AutoGenerationDisclaimer
-import com.github.marcoferrer.krotoplus.proto.*
+import com.github.marcoferrer.krotoplus.proto.ProtoMessage
+import com.github.marcoferrer.krotoplus.proto.ProtoMethod
+import com.github.marcoferrer.krotoplus.proto.ProtoService
+import com.github.marcoferrer.krotoplus.proto.ProtoType
 import com.github.marcoferrer.krotoplus.utils.CommonClassNames
 import com.github.marcoferrer.krotoplus.utils.matches
 import com.google.protobuf.compiler.PluginProtos
 import com.squareup.kotlinpoet.*
+import com.squareup.kotlinpoet.ParameterizedTypeName.Companion.parameterizedBy
 import io.grpc.BindableService
 
 object MockServicesGenerator : Generator {
@@ -159,13 +162,12 @@ object MockServicesGenerator : Generator {
         }
 
         return classBuilder
-            .addAnnotation(protoFile.getGeneratedAnnotationSpec()).build()
+//            .addAnnotation(protoFile.getGeneratedAnnotationSpec()).build()
             .takeIf { it.funSpecs.isNotEmpty() }
             ?.let { typeSpec ->
-
                 FileSpec.builder(protoFile.javaPackage, mockClassNameString)
                     .addComment(AutoGenerationDisclaimer)
-                    .addType(typeSpec)
+                    .addType(typeSpec.typeSpecs[0]) // TODO
             }
     }
 

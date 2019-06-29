@@ -14,7 +14,7 @@ apply from: "$rootDir/publishing.gradle"
 description 'Kroto+ Proto-c Plugin'
 
 def mainClassName = 'com.github.marcoferrer.krotoplus.KrotoPlusProtoCMain'
-def pinnedKtVersion = '1.3.11'
+def pinnedKtVersion = '1.3.21'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
@@ -23,7 +23,7 @@ dependencies{
     implementation "io.grpc:grpc-protobuf:${Versions.grpc}"
     implementation "com.google.protobuf:protobuf-java:${Versions.protobuf}"
     implementation "org.jetbrains.kotlin:kotlin-reflect"
-    implementation ("com.squareup:kotlinpoet:1.0.1") {
+    implementation ("com.squareup:kotlinpoet:1.2.0") {
         exclude group: 'org.jetbrains.kotlin'
     }
 
@@ -61,6 +61,7 @@ clean {
 bootJar {
     launchScript()
     classifier = 'jvm8'
+
     // Unpack the libs require for enabling user scripting support
     // Eventually we will want to an alternative the to embedded
     // kotlin compiler and possibly use the daemon instead.
@@ -69,19 +70,23 @@ bootJar {
     requiresUnpack '**/protoc-gen-kroto-*.jar'
     requiresUnpack '**/protobuf-*.jar'
 
+    manifest {
+        attributes(
+            'Start-Class': mainClassName,
+            'Implementation-Title' : 'Kroto+ Proto-c Plugin',
+            'Implementation-Version': project.version
+        )
+    }
+
     // Explicitly add our non-executable artifact to the libs directory so that
     // it can be made available to the kotlin script compiler classpath.
     dependsOn jar
     from(jar) { into '/BOOT-INF/lib' }
-
-    manifest {
-        attributes 'Start-Class': mainClassName
-        attributes 'Implementation-Title' : 'Kroto+ Proto-c Plugin'
-        attributes 'Implementation-Version': project.version
-    }
 }
 
-jar.enabled = true
+jar {
+    enabled = true
+}
 
 artifacts {
     archives bootJar

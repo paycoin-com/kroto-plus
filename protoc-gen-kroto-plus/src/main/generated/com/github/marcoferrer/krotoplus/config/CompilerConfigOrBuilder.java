@@ -278,7 +278,7 @@ public interface CompilerConfigOrBuilder extends
    *
    * <code>repeated .krotoplus.compiler.GrpcCoroutinesGenOptions grpc_coroutines = 26;</code>
    */
-  java.util.List<com.github.marcoferrer.krotoplus.config.GrpcCoroutinesGenOptions>
+  java.util.List<com.github.marcoferrer.krotoplus.config.GrpcCoroutinesGenOptions> 
       getGrpcCoroutinesList();
   /**
    * <pre>
@@ -303,7 +303,7 @@ public interface CompilerConfigOrBuilder extends
    *
    * <code>repeated .krotoplus.compiler.GrpcCoroutinesGenOptions grpc_coroutines = 26;</code>
    */
-  java.util.List<? extends com.github.marcoferrer.krotoplus.config.GrpcCoroutinesGenOptionsOrBuilder>
+  java.util.List<? extends com.github.marcoferrer.krotoplus.config.GrpcCoroutinesGenOptionsOrBuilder> 
       getGrpcCoroutinesOrBuilderList();
   /**
    * <pre>
@@ -322,7 +322,7 @@ public interface CompilerConfigOrBuilder extends
    *
    * <code>repeated .krotoplus.compiler.MPProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
    */
-  java.util.List<com.github.marcoferrer.krotoplus.config.MPProtobufMessagesGenOptions>
+  java.util.List<com.github.marcoferrer.krotoplus.config.MPProtobufMessagesGenOptions> 
       getMpProtobufMessagesList();
   /**
    * <pre>
@@ -347,7 +347,7 @@ public interface CompilerConfigOrBuilder extends
    *
    * <code>repeated .krotoplus.compiler.MPProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
    */
-  java.util.List<? extends com.github.marcoferrer.krotoplus.config.MPProtobufMessagesGenOptionsOrBuilder>
+  java.util.List<? extends com.github.marcoferrer.krotoplus.config.MPProtobufMessagesGenOptionsOrBuilder> 
       getMpProtobufMessagesOrBuilderList();
   /**
    * <pre>

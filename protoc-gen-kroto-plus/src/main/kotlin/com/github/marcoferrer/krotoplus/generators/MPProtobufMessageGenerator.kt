@@ -70,7 +70,7 @@ object MPProtobufMessageGenerator : Generator {
         enumSpec.addEnumConstant("UNRECOGNIZED(-1)")
 
         return enumSpec
-            .companionObject(companionSpec.build())
+            .addType(companionSpec.build())
             .build()
     }
 
@@ -109,7 +109,7 @@ object MPProtobufMessageGenerator : Generator {
             }
 
         classSpecBuilder.primaryConstructor(constructorSpec.build())
-            .companionObject(TypeSpec.companionObjectBuilder()
+            .addType(TypeSpec.companionObjectBuilder()
                 .addProperty(PropertySpec
                     .builder("defaultInstance",className)
                     .initializer("%T()",className)

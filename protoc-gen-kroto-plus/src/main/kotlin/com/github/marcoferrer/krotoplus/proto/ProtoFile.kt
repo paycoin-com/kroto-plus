@@ -16,10 +16,8 @@
 
 package com.github.marcoferrer.krotoplus.proto
 
-import com.github.marcoferrer.krotoplus.Manifest
 import com.google.common.base.CaseFormat
 import com.google.protobuf.DescriptorProtos
-import com.squareup.kotlinpoet.AnnotationSpec
 import com.squareup.kotlinpoet.ClassName
 
 data class ProtoFile(

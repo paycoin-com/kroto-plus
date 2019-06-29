@@ -27,7 +27,6 @@ import kotlin.script.experimental.jvm.util.KotlinJars
 
 
 fun main(args: Array<String>) {
-
     setScriptClassPath()
     initializeContext()
 
