@@ -1,5 +1,6 @@
 package com.github.marcoferrer.krotoplus.gradle
 
+import com.github.marcoferrer.krotoplus.config.CompilerConfig
 import org.gradle.api.Action
 import java.io.File
 import javax.inject.Inject
