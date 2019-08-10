@@ -27,6 +27,7 @@ private static final long serialVersionUID = 0L;
     insertions_ = java.util.Collections.emptyList();
     generatorScripts_ = java.util.Collections.emptyList();
     grpcCoroutines_ = java.util.Collections.emptyList();
+    mpProtobufMessages_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -116,6 +117,15 @@ private static final long serialVersionUID = 0L;
                 input.readMessage(com.github.marcoferrer.krotoplus.config.GrpcCoroutinesGenOptions.parser(), extensionRegistry));
             break;
           }
+          case 218: {
+            if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+              mpProtobufMessages_ = new java.util.ArrayList<com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions>();
+              mutable_bitField0_ |= 0x00000080;
+            }
+            mpProtobufMessages_.add(
+                input.readMessage(com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions.parser(), extensionRegistry));
+            break;
+          }
           default: {
             if (!parseUnknownFieldProto3(
                 input, unknownFields, extensionRegistry, tag)) {
@@ -151,6 +161,9 @@ private static final long serialVersionUID = 0L;
       }
       if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
         grpcCoroutines_ = java.util.Collections.unmodifiableList(grpcCoroutines_);
+      }
+      if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+        mpProtobufMessages_ = java.util.Collections.unmodifiableList(mpProtobufMessages_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -554,6 +567,61 @@ private static final long serialVersionUID = 0L;
     return grpcCoroutines_.get(index);
   }
 
+  public static final int MP_PROTOBUF_MESSAGES_FIELD_NUMBER = 27;
+  private java.util.List<com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions> mpProtobufMessages_;
+  /**
+   * <pre>
+   * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+   * </pre>
+   *
+   * <code>repeated .krotoplus.compiler.MpProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+   */
+  public java.util.List<com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions> getMpProtobufMessagesList() {
+    return mpProtobufMessages_;
+  }
+  /**
+   * <pre>
+   * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+   * </pre>
+   *
+   * <code>repeated .krotoplus.compiler.MpProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+   */
+  public java.util.List<? extends com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptionsOrBuilder> 
+      getMpProtobufMessagesOrBuilderList() {
+    return mpProtobufMessages_;
+  }
+  /**
+   * <pre>
+   * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+   * </pre>
+   *
+   * <code>repeated .krotoplus.compiler.MpProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+   */
+  public int getMpProtobufMessagesCount() {
+    return mpProtobufMessages_.size();
+  }
+  /**
+   * <pre>
+   * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+   * </pre>
+   *
+   * <code>repeated .krotoplus.compiler.MpProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+   */
+  public com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions getMpProtobufMessages(int index) {
+    return mpProtobufMessages_.get(index);
+  }
+  /**
+   * <pre>
+   * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+   * </pre>
+   *
+   * <code>repeated .krotoplus.compiler.MpProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+   */
+  public com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptionsOrBuilder getMpProtobufMessagesOrBuilder(
+      int index) {
+    return mpProtobufMessages_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -588,6 +656,9 @@ private static final long serialVersionUID = 0L;
     }
     for (int i = 0; i < grpcCoroutines_.size(); i++) {
       output.writeMessage(26, grpcCoroutines_.get(i));
+    }
+    for (int i = 0; i < mpProtobufMessages_.size(); i++) {
+      output.writeMessage(27, mpProtobufMessages_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -626,6 +697,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(26, grpcCoroutines_.get(i));
     }
+    for (int i = 0; i < mpProtobufMessages_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(27, mpProtobufMessages_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -656,6 +731,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getGeneratorScriptsList());
     result = result && getGrpcCoroutinesList()
         .equals(other.getGrpcCoroutinesList());
+    result = result && getMpProtobufMessagesList()
+        .equals(other.getMpProtobufMessagesList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -694,6 +771,10 @@ private static final long serialVersionUID = 0L;
     if (getGrpcCoroutinesCount() > 0) {
       hash = (37 * hash) + GRPC_COROUTINES_FIELD_NUMBER;
       hash = (53 * hash) + getGrpcCoroutinesList().hashCode();
+    }
+    if (getMpProtobufMessagesCount() > 0) {
+      hash = (37 * hash) + MP_PROTOBUF_MESSAGES_FIELD_NUMBER;
+      hash = (53 * hash) + getMpProtobufMessagesList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -834,6 +915,7 @@ private static final long serialVersionUID = 0L;
         getInsertionsFieldBuilder();
         getGeneratorScriptsFieldBuilder();
         getGrpcCoroutinesFieldBuilder();
+        getMpProtobufMessagesFieldBuilder();
       }
     }
     @java.lang.Override
@@ -880,6 +962,12 @@ private static final long serialVersionUID = 0L;
         bitField0_ = (bitField0_ & ~0x00000040);
       } else {
         grpcCoroutinesBuilder_.clear();
+      }
+      if (mpProtobufMessagesBuilder_ == null) {
+        mpProtobufMessages_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+      } else {
+        mpProtobufMessagesBuilder_.clear();
       }
       return this;
     }
@@ -970,6 +1058,15 @@ private static final long serialVersionUID = 0L;
         result.grpcCoroutines_ = grpcCoroutines_;
       } else {
         result.grpcCoroutines_ = grpcCoroutinesBuilder_.build();
+      }
+      if (mpProtobufMessagesBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) == 0x00000080)) {
+          mpProtobufMessages_ = java.util.Collections.unmodifiableList(mpProtobufMessages_);
+          bitField0_ = (bitField0_ & ~0x00000080);
+        }
+        result.mpProtobufMessages_ = mpProtobufMessages_;
+      } else {
+        result.mpProtobufMessages_ = mpProtobufMessagesBuilder_.build();
       }
       onBuilt();
       return result;
@@ -1198,6 +1295,32 @@ private static final long serialVersionUID = 0L;
                  getGrpcCoroutinesFieldBuilder() : null;
           } else {
             grpcCoroutinesBuilder_.addAllMessages(other.grpcCoroutines_);
+          }
+        }
+      }
+      if (mpProtobufMessagesBuilder_ == null) {
+        if (!other.mpProtobufMessages_.isEmpty()) {
+          if (mpProtobufMessages_.isEmpty()) {
+            mpProtobufMessages_ = other.mpProtobufMessages_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+          } else {
+            ensureMpProtobufMessagesIsMutable();
+            mpProtobufMessages_.addAll(other.mpProtobufMessages_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.mpProtobufMessages_.isEmpty()) {
+          if (mpProtobufMessagesBuilder_.isEmpty()) {
+            mpProtobufMessagesBuilder_.dispose();
+            mpProtobufMessagesBuilder_ = null;
+            mpProtobufMessages_ = other.mpProtobufMessages_;
+            bitField0_ = (bitField0_ & ~0x00000080);
+            mpProtobufMessagesBuilder_ = 
+              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                 getMpProtobufMessagesFieldBuilder() : null;
+          } else {
+            mpProtobufMessagesBuilder_.addAllMessages(other.mpProtobufMessages_);
           }
         }
       }
@@ -3413,6 +3536,318 @@ private static final long serialVersionUID = 0L;
         grpcCoroutines_ = null;
       }
       return grpcCoroutinesBuilder_;
+    }
+
+    private java.util.List<com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions> mpProtobufMessages_ =
+      java.util.Collections.emptyList();
+    private void ensureMpProtobufMessagesIsMutable() {
+      if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+        mpProtobufMessages_ = new java.util.ArrayList<com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions>(mpProtobufMessages_);
+        bitField0_ |= 0x00000080;
+       }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions, com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions.Builder, com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptionsOrBuilder> mpProtobufMessagesBuilder_;
+
+    /**
+     * <pre>
+     * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+     * </pre>
+     *
+     * <code>repeated .krotoplus.compiler.MpProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+     */
+    public java.util.List<com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions> getMpProtobufMessagesList() {
+      if (mpProtobufMessagesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(mpProtobufMessages_);
+      } else {
+        return mpProtobufMessagesBuilder_.getMessageList();
+      }
+    }
+    /**
+     * <pre>
+     * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+     * </pre>
+     *
+     * <code>repeated .krotoplus.compiler.MpProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+     */
+    public int getMpProtobufMessagesCount() {
+      if (mpProtobufMessagesBuilder_ == null) {
+        return mpProtobufMessages_.size();
+      } else {
+        return mpProtobufMessagesBuilder_.getCount();
+      }
+    }
+    /**
+     * <pre>
+     * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+     * </pre>
+     *
+     * <code>repeated .krotoplus.compiler.MpProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+     */
+    public com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions getMpProtobufMessages(int index) {
+      if (mpProtobufMessagesBuilder_ == null) {
+        return mpProtobufMessages_.get(index);
+      } else {
+        return mpProtobufMessagesBuilder_.getMessage(index);
+      }
+    }
+    /**
+     * <pre>
+     * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+     * </pre>
+     *
+     * <code>repeated .krotoplus.compiler.MpProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+     */
+    public Builder setMpProtobufMessages(
+        int index, com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions value) {
+      if (mpProtobufMessagesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMpProtobufMessagesIsMutable();
+        mpProtobufMessages_.set(index, value);
+        onChanged();
+      } else {
+        mpProtobufMessagesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+     * </pre>
+     *
+     * <code>repeated .krotoplus.compiler.MpProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+     */
+    public Builder setMpProtobufMessages(
+        int index, com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions.Builder builderForValue) {
+      if (mpProtobufMessagesBuilder_ == null) {
+        ensureMpProtobufMessagesIsMutable();
+        mpProtobufMessages_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        mpProtobufMessagesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+     * </pre>
+     *
+     * <code>repeated .krotoplus.compiler.MpProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+     */
+    public Builder addMpProtobufMessages(com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions value) {
+      if (mpProtobufMessagesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMpProtobufMessagesIsMutable();
+        mpProtobufMessages_.add(value);
+        onChanged();
+      } else {
+        mpProtobufMessagesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+     * </pre>
+     *
+     * <code>repeated .krotoplus.compiler.MpProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+     */
+    public Builder addMpProtobufMessages(
+        int index, com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions value) {
+      if (mpProtobufMessagesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMpProtobufMessagesIsMutable();
+        mpProtobufMessages_.add(index, value);
+        onChanged();
+      } else {
+        mpProtobufMessagesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+     * </pre>
+     *
+     * <code>repeated .krotoplus.compiler.MpProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+     */
+    public Builder addMpProtobufMessages(
+        com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions.Builder builderForValue) {
+      if (mpProtobufMessagesBuilder_ == null) {
+        ensureMpProtobufMessagesIsMutable();
+        mpProtobufMessages_.add(builderForValue.build());
+        onChanged();
+      } else {
+        mpProtobufMessagesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+     * </pre>
+     *
+     * <code>repeated .krotoplus.compiler.MpProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+     */
+    public Builder addMpProtobufMessages(
+        int index, com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions.Builder builderForValue) {
+      if (mpProtobufMessagesBuilder_ == null) {
+        ensureMpProtobufMessagesIsMutable();
+        mpProtobufMessages_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        mpProtobufMessagesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+     * </pre>
+     *
+     * <code>repeated .krotoplus.compiler.MpProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+     */
+    public Builder addAllMpProtobufMessages(
+        java.lang.Iterable<? extends com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions> values) {
+      if (mpProtobufMessagesBuilder_ == null) {
+        ensureMpProtobufMessagesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, mpProtobufMessages_);
+        onChanged();
+      } else {
+        mpProtobufMessagesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+     * </pre>
+     *
+     * <code>repeated .krotoplus.compiler.MpProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+     */
+    public Builder clearMpProtobufMessages() {
+      if (mpProtobufMessagesBuilder_ == null) {
+        mpProtobufMessages_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+      } else {
+        mpProtobufMessagesBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+     * </pre>
+     *
+     * <code>repeated .krotoplus.compiler.MpProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+     */
+    public Builder removeMpProtobufMessages(int index) {
+      if (mpProtobufMessagesBuilder_ == null) {
+        ensureMpProtobufMessagesIsMutable();
+        mpProtobufMessages_.remove(index);
+        onChanged();
+      } else {
+        mpProtobufMessagesBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     * <pre>
+     * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+     * </pre>
+     *
+     * <code>repeated .krotoplus.compiler.MpProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+     */
+    public com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions.Builder getMpProtobufMessagesBuilder(
+        int index) {
+      return getMpProtobufMessagesFieldBuilder().getBuilder(index);
+    }
+    /**
+     * <pre>
+     * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+     * </pre>
+     *
+     * <code>repeated .krotoplus.compiler.MpProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+     */
+    public com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptionsOrBuilder getMpProtobufMessagesOrBuilder(
+        int index) {
+      if (mpProtobufMessagesBuilder_ == null) {
+        return mpProtobufMessages_.get(index);  } else {
+        return mpProtobufMessagesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     * <pre>
+     * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+     * </pre>
+     *
+     * <code>repeated .krotoplus.compiler.MpProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+     */
+    public java.util.List<? extends com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptionsOrBuilder> 
+         getMpProtobufMessagesOrBuilderList() {
+      if (mpProtobufMessagesBuilder_ != null) {
+        return mpProtobufMessagesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(mpProtobufMessages_);
+      }
+    }
+    /**
+     * <pre>
+     * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+     * </pre>
+     *
+     * <code>repeated .krotoplus.compiler.MpProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+     */
+    public com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions.Builder addMpProtobufMessagesBuilder() {
+      return getMpProtobufMessagesFieldBuilder().addBuilder(
+          com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+     * </pre>
+     *
+     * <code>repeated .krotoplus.compiler.MpProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+     */
+    public com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions.Builder addMpProtobufMessagesBuilder(
+        int index) {
+      return getMpProtobufMessagesFieldBuilder().addBuilder(
+          index, com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions.getDefaultInstance());
+    }
+    /**
+     * <pre>
+     * Configuration entries for the 'Multi-Platform Protobuf Messages' code generator.
+     * </pre>
+     *
+     * <code>repeated .krotoplus.compiler.MpProtobufMessagesGenOptions mp_protobuf_messages = 27;</code>
+     */
+    public java.util.List<com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions.Builder> 
+         getMpProtobufMessagesBuilderList() {
+      return getMpProtobufMessagesFieldBuilder().getBuilderList();
+    }
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+        com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions, com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions.Builder, com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptionsOrBuilder> 
+        getMpProtobufMessagesFieldBuilder() {
+      if (mpProtobufMessagesBuilder_ == null) {
+        mpProtobufMessagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+            com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions, com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptions.Builder, com.github.marcoferrer.krotoplus.config.MpProtobufMessagesGenOptionsOrBuilder>(
+                mpProtobufMessages_,
+                ((bitField0_ & 0x00000080) == 0x00000080),
+                getParentForChildren(),
+                isClean());
+        mpProtobufMessages_ = null;
+      }
+      return mpProtobufMessagesBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
